@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <title>Bookshelf Apps</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./assets/styles/style.css" />
+
+</head>
+<body>
+<header>
+  <h1>Bookshelf Apps</h1>
+</header>
+
+<main>
+  <section class="item input-section add">
+    <h2>Masukkan Buku Baru</h2>
+    <form id="inputBook">
+      <div class="input">
+        <label for="inputBookTitle">Judul</label>
+        <input id="inputBookTitle" type="text" placeholder="Masukkan Judul Buku" required>
+      </div>
+      <div class="input">
+        <label for="inputBookAuthor">Penulis</label>
+        <input id="inputBookAuthor" type="text" placeholder="Masukkan Penulis Buku" required>
+      </div>
+      <div class="input">
+        <label for="inputBookYear">Tahun</label>
+        <input id="inputBookYear" type="number" placeholder="Masukkan Tahun Terbit" required>
+      </div>
+      <div class="input-inline">
+        <label for="inputBookIsComplete">Selesai dibaca</label>
+        <input id="inputBookIsComplete" type="checkbox" onclick="getChecbox()">
+      </div>
+      <button id="bookSubmit" type="submit">Masukkan Buku ke Rak <span>Belum selesai dibaca</span></button>
+    </form>
+  </section>
+
+  <section class="item book-shelf unread">
+    <h2>Belum selesai dibaca</h2>
+    <div id="incompleteBookshelfList" class="book-list">
+
+    </div>
+  </section>
+  
+  <section class="item book-shelf read">
+    <h2>Selesai dibaca</h2>
+    <div id="completeBookshelfList" class="book-list">
+        
+    </div>
+  </section>
+</main>
+
+<aside>
+  <nav class="sidebar-item">
+    <div class="search-section">
+      <div class="sidebar-header">
+        <figure class="logo">
+          <img src="./assets/images/freepik-bookshelf.png" alt="Aplikasi Perpustakaan Buku">
+        </figure>
+        <h2>Aplikasi Perpustakaan Buku</h2>
+      </div>
+      <form id="searchBook">
+        <input id="searchBookTitle" type="text" placeholder="Cari Judul Buku...">
+        <button id="searchSubmit" type="submit" title="Cari Buku">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 30 30" style=" fill:#000000;"><path d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"></path></svg>
+        </button>
+      </form>
+    </div>
+
+    <ul>
+      <li data-li="add" class="active">
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50" style=" fill:#000000;"><path d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 24 13 L 24 24 L 13 24 L 13 26 L 24 26 L 24 37 L 26 37 L 26 26 L 37 26 L 37 24 L 26 24 L 26 13 L 24 13 z"></path></svg>          
+          <span class="text">Tambah buku baru</span>
+        </a>
+      </li>
+      <li data-li="unread">
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50" style=" fill:#000000;"><path d="M 12.8125 2 C 12.335938 2.089844 11.992188 2.511719 12 3 L 12 47 C 11.996094 47.359375 12.1875 47.691406 12.496094 47.871094 C 12.804688 48.054688 13.1875 48.054688 13.5 47.875 L 25 41.15625 L 36.5 47.875 C 36.8125 48.054688 37.195313 48.054688 37.503906 47.871094 C 37.8125 47.691406 38.003906 47.359375 38 47 L 38 3 C 38 2.449219 37.550781 2 37 2 L 13 2 C 12.96875 2 12.9375 2 12.90625 2 C 12.875 2 12.84375 2 12.8125 2 Z M 14 4 L 36 4 L 36 45.25 L 25.5 39.125 C 25.191406 38.945313 24.808594 38.945313 24.5 39.125 L 14 45.25 Z"></path></svg>
+          <span class="text">Belum selesai dibaca</span>
+        </a>
+      </li>
+      <li data-li="read">
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50" style=" fill:#000000;"><path d="M 25 2 C 12.317 2 2 12.317 2 25 C 2 37.683 12.317 48 25 48 C 37.683 48 48 37.683 48 25 C 48 20.44 46.660281 16.189328 44.363281 12.611328 L 42.994141 14.228516 C 44.889141 17.382516 46 21.06 46 25 C 46 36.579 36.579 46 25 46 C 13.421 46 4 36.579 4 25 C 4 13.421 13.421 4 25 4 C 30.443 4 35.393906 6.0997656 39.128906 9.5097656 L 40.4375 7.9648438 C 36.3525 4.2598437 30.935 2 25 2 z M 43.236328 7.7539062 L 23.914062 30.554688 L 15.78125 22.96875 L 14.417969 24.431641 L 24.083984 33.447266 L 44.763672 9.046875 L 43.236328 7.7539062 z"></path></svg>          
+          <span class="text">Selesai dibaca</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+
+<script src="./assets/javascript/script.js"></script>
+</body>
+</html>

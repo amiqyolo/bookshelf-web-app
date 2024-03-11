@@ -1,0 +1,439 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+  
+body {
+    background-color: #F6F6F6;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 10%;
+    width: 80%;
+    z-index: 999;
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1FAB89;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+}
+
+aside {
+    width: 30%;
+    height: calc(100% - 4.5rem);
+    bottom: 0;
+    left: 0;
+    margin-left: 10%;
+    position: fixed;
+    transition: width 0.2s;
+    background: #9DF3C4;
+    overflow: auto;
+}
+
+.search-section {
+    padding: 25px 20px;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-header .logo {
+    width: 54px;
+    height: 54px;
+}
+
+.sidebar-header .logo img {
+    width: 54px;
+    height: 54px;
+}
+
+.sidebar-header h2 {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.search-section form {
+    display: flex;
+    margin-top: 24px;
+    background-color: #F6F6F6;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.search-section form input {
+    all: unset;
+    font-size: 14px;
+    width: 100%;
+    padding: 6px 10px;
+}
+
+.search-section form button {
+    all: unset;
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+}
+
+.search-section form button svg {
+    color: #283039;
+    fill: currentColor;
+    display: flex;
+    width: 38px;
+    height: 38px;
+    padding: 10px;
+}
+
+.sidebar-item, 
+.sidebar-item a { 
+    color: #000;
+}
+
+.sidebar-item a {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+}
+.sidebar-item .active { 
+    background: #62D2A2;
+}
+
+.sidebar-item a:hover { 
+    background: #D7FBE8; 
+}
+
+.sidebar-item svg { 
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.sidebar-item span {
+    font-size: 15px;
+    font-weight: 200;
+}
+
+main {
+    flex-grow: 1;
+    width: calc(80% - 30%);
+    height: calc(100% - 4.5rem);
+    right: 0;
+    background-color: #fff;
+    bottom: 0;
+    margin-right: 10%;
+    padding: 40px 20px;
+    position: fixed;
+    overflow: auto;
+}
+
+.input-section h2 {
+    font-size: 20px;
+}
+
+.input-section form {
+    margin-top: 40px;
+}
+
+.input-section form .input {
+    margin-right: 20px;
+}
+
+.input-section form .input input {
+    all: unset;
+    font-size: 14px;
+    margin: 20px 0;
+    background-color: #F6F6F6;
+    color: #283039;
+    height: 38px;
+    width: 100%;
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+.input-section form .input label {
+    font-size: 16px;
+}
+
+.input-section form .input-inline {
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+}
+
+.input-section form .input-inline label {
+    color: #333;
+    font-weight: 500;
+    margin-right: 14px;
+    font-size: 16px;
+}
+
+.input-section form .input-inline input {
+    width: 20px;
+    height: 20px;
+}
+
+.input-section form button {
+    background-color: #1FAB89;
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+    width: 100%;
+    padding: 6px 10px;
+    height: 44px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.input-section form button:hover {
+    background-color: #9DF3C4;
+    color: #283039;
+}
+
+.input-section form button span {
+    font-weight: bold;
+}
+
+.book-shelf h2 {
+    font-size: 20px;
+}
+
+.book-list {
+    margin-top: 40px;
+    border-radius: 5px;
+    background-color: #F6F6F6;
+    border: 1px solid #E5E5E5;
+}
+
+.book-list .book-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.book-list .book-item .book-container {
+    flex: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-list .book-item .action {
+    flex: 25%;
+    display: flex;
+    justify-content: end;
+}
+
+.book-list .book-item .book-container .book-content {
+    display: flex;
+    align-items: center;
+}
+
+.book-list .book-item .book-container h3 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.book-list .book-item .book-container .book-content p {
+    margin-top: 4px;
+    font-weight: 200;
+    font-size: 14px;
+    text-align: center;
+    line-height: 34px;
+}
+
+.book-content :not([hidden]) ~ :not([hidden]) {
+    position: relative;
+}
+
+.book-content :not([hidden]) ~ :not([hidden])::before {
+    content: "\2022";
+    margin: 0 10px;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 34px;
+    font-weight: 700;
+}
+
+.trash-button,
+.check-button,
+.undo-button {
+    background-color: transparent;
+    margin-right: 10px;
+    cursor: pointer; 
+}
+
+.trash-button svg,
+.check-button svg,
+.undo-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+.trash-button svg:hover,
+.check-button svg:hover,
+.undo-button svg:hover {
+    width: 26px;
+    height: 26px;
+}
+
+.alert {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    padding: 20px;
+    background-color: #62D2A2;
+    color: #fff;
+    z-index: 9999;
+}
+  
+.close-btn {
+    margin-left: 15px;
+    font-weight: 700;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: #1FAB89;
+}
+
+.dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    max-width: 400px;
+    width: 100%;
+    background: #E5E5E5;
+    text-align: center;
+    padding: 25px 30px;
+    border-radius: 5px;
+    transform: translate(-50% , -50%) scale(0.97);
+    transition: all 0.3s ease;
+}
+
+.dialog h2 {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.dialog p {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.dialog .btn-remove {
+    margin-top: 24px;
+}
+
+.btn-remove button {
+    color: #fff;
+    font-size: 16px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-remove button:first-child {
+    background: #62D2A2;
+}
+
+.btn-remove button:first-child:hover {
+    background: #1FAB89;
+}
+
+.btn-remove button:last-child{
+    background: #EC7272;
+}
+
+.btn-remove button:last-child:hover {
+    background: #FA7070;
+}
+
+.book-list .hidden,
+.unread,
+.read {
+    display: none;
+}
+
+@media screen and (max-width: 1220px) {
+    header {
+        width: 100%;
+        margin: 0;
+    }
+
+    aside {
+        width: 40%;
+        margin-left: 0;
+    }
+
+    main {
+        width: 60%;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    aside { 
+        width: 70px; 
+    }
+    
+    aside .search-section { 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+    }
+    
+    aside .search-section h2 { 
+        display: none; 
+    }
+    
+    aside .search-section form { 
+        display: none; 
+    }
+
+    aside a {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    aside i {
+        font-size: 16px;
+        margin-right: 0;
+    }
+
+    aside .text { 
+        display: none; 
+    }
+
+    main { 
+        width: calc(100% - 70px); 
+    }
+}  
